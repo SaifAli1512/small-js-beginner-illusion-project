@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Illusion!
+	</title>
+<script>
+		function one()
+		{	
+			setTimeout(function(){
+				document.getElementById("demo1").style.display = "block";	
+				document.getElementById("demo2").style.display = "none";
+				document.getElementById("demo3").style.display = "none";	
+				two();
+			},15);
+		}
+		function two()
+		{
+			setTimeout(function(){
+				document.getElementById("demo1").style.display = "none";
+				document.getElementById("demo2").style.display = "block";	
+				document.getElementById("demo3").style.display = "none";	
+				three();
+			},15);
+		}
+		function three()
+		{
+			setTimeout(function(){
+				document.getElementById("demo1").style.display = "none";
+				document.getElementById("demo2").style.display = "none";	
+				document.getElementById("demo3").style.display = "block";	
+				one();
+			},15);
+		}
+</script>
+<style type="text/css">
+	img{
+		height: auto;
+		width: 300px;
+	}
+</style>
+</head>
+<body>
+<p id = "demo1">
+<img src = "1.jpg"  style="position: absolute;top:19px ">
+</p>
+<p id = "demo2" style="">
+<img src = "2.jpg" style="position: absolute; top:19px"> 
+</p>
+
+<p id = "demo3" style="">
+<img src = "3.jpg" style="position: absolute;top:19px"> 
+</p>
+
+<button type = "button" onClick="one()" style="position: absolute;"> Click Here! </button>
+</body>
+</html>
